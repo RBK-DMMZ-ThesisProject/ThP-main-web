@@ -17,7 +17,12 @@ import {
 import manImg from "./ma.png";
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical className="providsSeg">
+    <Segment
+      style={{ padding: "8em 0em" }}
+      vertical
+      className="providsSeg"
+      id="about"
+    >
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
@@ -41,7 +46,7 @@ const HomepageLayout = () => (
             </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image bordered rounded size="large" src={manImg} />
+            <Image size="large" src={manImg} />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -155,7 +160,7 @@ const HomepageLayout = () => (
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={3}>
+            <Grid.Column width={5}>
               <Header inverted as="h4" content="About" />
               <List link inverted>
                 <List.Item as="a">Contact Us</List.Item>

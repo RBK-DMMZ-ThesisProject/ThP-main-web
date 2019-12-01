@@ -13,7 +13,7 @@ import {
   Image,
   Visibility
 } from "semantic-ui-react";
-//import subImg from "./jobs.jpg";
+import logo from "./ma.png";
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
 
@@ -22,7 +22,7 @@ const getWidth = () => {
 const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
-      as="h2"
+      as="h1"
       content="Handy"
       inverted
       style={{
@@ -59,16 +59,20 @@ const HomepageHeading = ({ mobile }) => (
     </Button>
   </Container>
 );
+
 class DesktopContainer extends Component {
-  state = {};
+  state = { activeItem: "home" };
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
 
   render() {
+    const s = "./Services";
     const { children } = this.props;
     const { fixed } = this.state;
-
+    const { activeItem } = this.state;
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
         <Visibility
@@ -82,7 +86,7 @@ class DesktopContainer extends Component {
             textAlign="left"
             style={{
               minHeight: 700,
-              padding: "2em 1em"
+              padding: "1em 0em"
             }}
             vertical
           >
@@ -91,26 +95,37 @@ class DesktopContainer extends Component {
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
-              size="large"
+              size="massive"
             >
               <Container>
-                <Menu.Item as="a" active>
+                <Menu.Item
+                  as="a"
+                  href={s}
+                  name="home"
+                  active={activeItem === "home"}
+                  onClick={this.handleItemClick}
+                >
                   Home
                 </Menu.Item>
-                <Menu.Item as="a">Services</Menu.Item>
-                <Menu.Item as="a">Features</Menu.Item>
+                <Menu.Item
+                  as="a"
+                  name="Services"
+                  active={activeItem === "Services"}
+                  onClick={this.handleItemClick}
+                >
+                  Services
+                </Menu.Item>
+                <Menu.Item
+                  as="a"
+                  name="About us"
+                  active={activeItem === "About us"}
+                  onClick={this.handleItemClick}
+                >
+                  Features
+                </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button
-                    as="a"
-                    inverted={!fixed}
-                    primary={fixed}
-                    style={{ marginLeft: "1.5em" }}
-                  >
-                    Sign Up
-                  </Button>
+                  <Image avatar src={logo} size="mini" />
+                  Handy
                 </Menu.Item>
               </Container>
             </Menu>
@@ -159,10 +174,12 @@ class MobileContainer extends Component {
           <Menu.Item as="a" active>
             Home
           </Menu.Item>
-          <Menu.Item as="a">Services</Menu.Item>
+          <Menu.Item as="a" href="">
+            Services
+          </Menu.Item>
           <Menu.Item as="a">Features</Menu.Item>
-          <Menu.Item as="a">Log in</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          <Image avatar src={logo} size="mini" />
+          Handy
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -178,12 +195,8 @@ class MobileContainer extends Component {
                   <Icon name="sidebar" />
                 </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted>
-                    Log in
-                  </Button>
-                  <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
-                    Sign Up
-                  </Button>
+                  <Image avatar src={logo} size="mini" />
+                  Handy
                 </Menu.Item>
               </Menu>
             </Container>

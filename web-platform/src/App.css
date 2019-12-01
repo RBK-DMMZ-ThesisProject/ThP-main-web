@@ -1,7 +1,9 @@
 /* .App {
   text-align: center;
 } */
-
+body{
+  background-color: #eff7fa
+}
 .heading{
   /* background-color: #122951!important ; */
   background-image: url('homeBg.jpg') !important;
@@ -15,6 +17,10 @@
   height: 5.0em;
 }
 .providsSeg{
-  background-color:#eff7fa !important ;
+  background-color: #dff0f6!important ;
   background-size: cover !important;
+}
+.footer{
+
+  background-color: #63b8d4!important ;
 }
