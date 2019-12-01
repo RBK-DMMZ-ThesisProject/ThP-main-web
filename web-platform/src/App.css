@@ -1,14 +1,20 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .heading{
+  /* background-color: #122951!important ; */
   background-image: url('homeBg.jpg') !important;
   background-size: cover !important;
+ 
   
   background-attachment: scroll;
 }
 .googleIcon{
   width: 5.0em;
   height: 5.0em;
+}
+.providsSeg{
+  background-color:#eff7fa !important ;
+  background-size: cover !important;
 }

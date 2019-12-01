@@ -23,7 +23,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as="h2"
-      content="Shaghilhom"
+      content="Handy"
       inverted
       style={{
         fontSize: mobile ? "1.7em" : "3.7em",
@@ -35,21 +35,22 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as="h3"
-      content="A handfull set of service providers just btween your habds."
+      content="A handfull set of service providers just btween your hands."
       inverted
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
         fontWeight: "normal",
         marginTop: mobile ? "0.3em" : "0.5em",
-        marginLeft: mobile ? "4em" : "15em"
+        marginLeft: mobile ? "4em" : "13em"
       }}
     />
     <Button
       primary
       size="huge"
       style={{
+        innerWidth: mobile ? "3.5em" : "16.5em",
         marginTop: mobile ? "0.3em" : "0.5em",
-        marginLeft: mobile ? "4em" : "19em"
+        marginLeft: mobile ? "4em" : "17em"
       }}
     >
       <Icon name="google play" class="googleIcon" />
@@ -113,6 +114,9 @@ class DesktopContainer extends Component {
                 </Menu.Item>
               </Container>
             </Menu>
+            {/* <Container>
+              <Image bordered rounded size="large" src={subImg} />
+            </Container> */}
             <HomepageHeading />
           </Segment>
         </Visibility>
