@@ -1,9 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-
-function App() {
-  return <div className="App"></div>;
-}
+import HomepageLayout from "./components/Services";
+import React, { Component } from "react";
+const App = () => (
+  <div>
+    <HomepageLayout />
+  </div>
+);
 
 export default App;

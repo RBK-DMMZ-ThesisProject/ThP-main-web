@@ -2,3 +2,13 @@
   text-align: center;
 }
 
+.heading{
+  background-image: url('homeBg.jpg') !important;
+  background-size: cover !important;
+  
+  background-attachment: scroll;
+}
+.googleIcon{
+  width: 5.0em;
+  height: 5.0em;
+}
